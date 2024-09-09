@@ -1,17 +1,25 @@
 name: Format
 
 on:
-  workflow_dispatch
-  
-  
+  push:
+    branches: [ master ]
 
 jobs:
+
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: prettier-java-format-action
+        # You may pin to the exact commit or the version.
+        # uses: tsar-boomba/prettier-java-action@0b6f73e327951a4ba1da05f5dbb3e227201af0a4
+        uses: tsar-boomba/prettier-java-action@v1.1.0
+                
 
   formatting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 # v2 minimum required
-      - uses: ryanbascom/googlejavaformat@v4
+      - uses: axel-op/googlejavaformat-action@v3
         with:
           args: "--skip-sorting-imports --replace"
           # Recommended if you use MacOS:
