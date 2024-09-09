@@ -6,68 +6,68 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import com.revrobotics.CANSparkFlex;
 
 public interface TrampSubsystemIO {
-   
-    @AutoLog
-    public static class TrampSubsystemIOInputs {
 
-        // all of the inputs: 
-        public double elevatorPosition = 0.0;
-        public double elevatorVelocity = 0.0;
-        public double elevatorCurrent = 0.0;
-        public double elevatorVoltage = 0.0;
-        public double elevatorAcceleration = 0.0;
+  @AutoLog
+  public static class TrampSubsystemIOInputs {
 
-        public double armPosition = 0.0; 
-        public double armVelocity = 0.0; 
-        public double armCurrent = 0.0;
-        public double armVoltage = 0.0;
-        public double armAcceleration = 0.0; 
+    // all of the inputs:
+    public double elevatorPosition = 0.0;
+    public double elevatorVelocity = 0.0;
+    public double elevatorCurrent = 0.0;
+    public double elevatorVoltage = 0.0;
+    public double elevatorAcceleration = 0.0;
 
-        public double climberPosition = 0.0; 
-        public double climberVelocity = 0.0; 
-        public double climberCurrent = 0.0;
-        public double climberVoltage = 0.0;
-        public double climberAcceleration = 0.0; 
+    public double armPosition = 0.0;
+    public double armVelocity = 0.0;
+    public double armCurrent = 0.0;
+    public double armVoltage = 0.0;
+    public double armAcceleration = 0.0;
 
-        public double manipulatorPosition = 0.0; 
-        public double manipulatorVelocity = 0.0; 
-        public double manipulatorCurrent = 0.0;
-        public double manipulatorVoltage = 0.0;
-        public double manipulatorAcceleration = 0.0; 
-    }
-    // updating inputs
-    public default void updateInputs(TrampSubsystemIOInputs inputs) {}
+    public double climberPosition = 0.0;
+    public double climberVelocity = 0.0;
+    public double climberCurrent = 0.0;
+    public double climberVoltage = 0.0;
+    public double climberAcceleration = 0.0;
 
-    // ARM METHODS: 
-    public TalonFX getArm(); 
-    
-    public void setArmPosition(double rps); 
+    public double manipulatorPosition = 0.0;
+    public double manipulatorVelocity = 0.0;
+    public double manipulatorCurrent = 0.0;
+    public double manipulatorVoltage = 0.0;
+    public double manipulatorAcceleration = 0.0;
+  }
 
-    public double getArmPosition(); 
+  // updating inputs
+  public default void updateInputs(TrampSubsystemIOInputs inputs) {}
 
-    // CLIMBER METHODS: 
-    public TalonFX getClimber(); 
+  // ARM METHODS:
+  public TalonFX getArm();
 
-    public void setClimberPosition(double pos); 
+  public void setArmPosition(double rps);
 
-    public double getClimberPosition(); 
+  public double getArmPosition();
 
-    // ELEVATOR METHODS: 
-    public TalonFX getElevator(); 
+  // CLIMBER METHODS:
+  public TalonFX getClimber();
 
-    public void setElevatorPosition(double pos); 
+  public void setClimberPosition(double pos);
 
-    public double getElevatorPosition(); 
+  public double getClimberPosition();
 
-    //MANIPULATOR METHODS: 
-    public CANSparkFlex getManipulator(); 
+  // ELEVATOR METHODS:
+  public TalonFX getElevator();
 
-    public void runManipulator(double speed); 
+  public void setElevatorPosition(double pos);
 
-    public void setManipulatorPosition(double pos); 
+  public double getElevatorPosition();
 
-    public void stopManipulator(); 
+  // MANIPULATOR METHODS:
+  public CANSparkFlex getManipulator();
 
-    public double getManipulatorPosition(); 
+  public void runManipulator(double speed);
 
+  public void setManipulatorPosition(double pos);
+
+  public void stopManipulator();
+
+  public double getManipulatorPosition();
 }

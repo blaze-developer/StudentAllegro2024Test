@@ -19,6 +19,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Creates a new OI.
+   *
    * @param io The IO layer implementation to use for the subsystem.
    */
   public OISubsystem(OIIO io) {
@@ -29,6 +30,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Creates a new OI at a port number.
+   *
    * @param port The usb port the OI is plugged into.
    */
   public OISubsystem(int port) {
@@ -47,6 +49,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Abort Button Trigger
+   *
    * @return {@link Trigger} for the abort button.
    */
   public Trigger abort() {
@@ -55,6 +58,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Eject Button Trigger
+   *
    * @return {@link Trigger} for the unclimb button.
    */
   public Trigger eject() {
@@ -63,6 +67,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Turtle Button Trigger
+   *
    * @return {@link Trigger} for the unclimb button.
    */
   public Trigger turtle() {
@@ -71,6 +76,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Climbing Prepare Button Trigger
+   *
    * @return {@link Trigger} for the Prepare Button
    */
   public Trigger climbPrepare() {
@@ -79,6 +85,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Climbing Execute Button Trigger
+   *
    * @return {@link Trigger} for the Execute Button
    */
   public Trigger climbExecute() {
@@ -87,6 +94,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Unclumb Button Trigger
+   *
    * @return {@link Trigger} for the unclimb button.
    * @deprecated This button isnt currently used on the robot.
    */
@@ -97,6 +105,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Shoot Button Trigger
+   *
    * @return {@link Trigger} for the shoot button.
    */
   public Trigger shoot() {
@@ -105,6 +114,7 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Collect Button Trigger
+   *
    * @return {@link Trigger} for the intake collect button.
    */
   public Trigger collect() {
@@ -113,66 +123,73 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Cycle Mode Speaker Left Switch Trigger
+   *
    * @return {@link Trigger} fired when cycle mode is set to speaker.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger cycleSpeaker() {
-      return io_.actionSpeaker();
+    return io_.actionSpeaker();
   }
 
   /**
    * Cycle Mode Trap Right Switch Trigger
+   *
    * @return {@link Trigger} fired when cycle mode is set to trap.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger cycleTrap() {
-      return io_.actionTrap();
+    return io_.actionTrap();
   }
 
   /**
    * Cycle Mode Amp Default Middle Switch Trigger
+   *
    * @return {@link Trigger} fired when cycle mode is set to amp.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger cycleAmp() {
-      return io_.actionAmp();
+    return io_.actionAmp();
   }
 
   /**
    * Shooting Mode Podium Left Switch Trigger
+   *
    * @return {@link Trigger} fired when shooting mode is set to podium.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger shootPodium() {
-      return io_.shootPodium();
+    return io_.shootPodium();
   }
 
   /**
    * Shooting Mode Auto Middle Switch Trigger
+   *
    * @return {@link Trigger} fired when shooting mode is set to auto.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger shootAuto() {
-      return io_.shootAuto();
+    return io_.shootAuto();
   }
 
   /**
    * Shooting Mode Subwoofer Right Switch Trigger
-   * @return  {@link Trigger} fired when shooting mode is set to subwoofer.
+   *
+   * @return {@link Trigger} fired when shooting mode is set to subwoofer.
    * @deprecated Might break in the future!
    */
   @Deprecated
   public Trigger shootSubwoofer() {
-      return io_.shootSubwoofer();
+    return io_.shootSubwoofer();
   }
 
   /**
    * Gets a supplier for the action switch state.
+   *
    * @return A supplier that gives the current state of the action type switch. (SPEAKER, AMP, TRAP)
    */
   public Supplier<ActionType> actionTypeSupplier() {
@@ -181,7 +198,9 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Gets a supplier for the shooting switch state.
-   * @return A supplier that gives the current state of the shooting type switch. (PODIUM, AUTO, SUBWOOFER)
+   *
+   * @return A supplier that gives the current state of the shooting type switch. (PODIUM, AUTO,
+   *     SUBWOOFER)
    */
   public Supplier<ShootType> shootTypeSupplier() {
     return shootType_;
@@ -189,11 +208,11 @@ public class OISubsystem extends SubsystemBase {
 
   /**
    * Sets the state of an indicator light on the OI (buttons or top indicators).
+   *
    * @param index The light to set.
    * @param on The state to set it to.
    */
   public void setIndicator(int index, boolean on) {
     io_.setIndicator(index, on);
   }
-
 }
